@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.android.learn">
+    <!--&lt;!&ndash;Normal Permissions&ndash;&gt;-->
+    <!--<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />-->
+    <!--<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />-->
+    <!--<uses-permission android:name="android.permission.INTERNET" />-->
+
+    <!--&lt;!&ndash;Dangerous Permissions&ndash;&gt;-->
+    <!--<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />-->
+    <!--<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />-->
+    <!--<uses-permission android:name="android.permission.READ_PHONE_STATE"/>-->
+    <uses-sdk tools:overrideLibrary="cn.lankton.flowlayout"/>
+    <application
+        android:name=".base.application.CustomApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/app_icon2"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/app_icon2"
+        android:supportsRtl="true"
+
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".activity.SplashActivity"
+            android:theme="@style/FullScreenStyle">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".MainActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"></activity>
+        <activity android:name=".activity.ArticleDetailActivity"></activity>
+        <activity android:name=".activity.SettingActivity"></activity>
+        <activity android:name=".activity.MyCollectActivity"></activity>
+        <activity android:name=".activity.RegisterLoginActivity"></activity>
+        <activity android:name=".activity.FeedbackActivity"></activity>
+        <activity android:name=".activity.KnowledgeChildActivity"></activity>
+        <activity android:name=".activity.FontSizeActivity"></activity>
+        <activity android:name=".activity.LanguageActivity"></activity>
+        <activity android:name=".activity.SearchResultActivity"></activity>
+        <activity android:name=".activity.MyTodoActivity"></activity>
+        <activity android:name=".activity.TodoEditActivity"></activity>
+        <activity android:name=".activity.TodoAddActivity"></activity>
+        <!--value的值填写你在友盟后台申请的应用Appkey-->
+        <meta-data android:value="5c2cac33f1f556a0bf000159" android:name="UMENG_APPKEY"/>
+        <!--value的值填写渠道名称，例如yingyongbao。这里设置动态渠道名称变量-->
+        <meta-data android:value="${UMENG_CHANNEL_VALUE}" android:name="UMENG_CHANNEL"/>
+    </application>
+
+</manifest>
