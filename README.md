@@ -3,6 +3,7 @@
 ## 玩Android
 - [playa](https://github.com/zeleven/playa)
 - [AndroidLearnProject-master](https://github.com/gaoleicoding/AndroidLearnProject)
+- [AndroidModuleDemo-master](https://github.com/wutq/AndroidModuleDemo)
 
 ## 视频应用
 - [bilibili-android-client-master](https://github.com/HotBitmapGG/bilibili-android-client)
