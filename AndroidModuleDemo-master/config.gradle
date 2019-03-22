@@ -1,7 +1,7 @@
 /**
  *  全局统一配置文件
  */
-ext {
+project.ext {
     //true 每个业务Module可以单独开发
     //false 每个业务Module以lib的方式运行
     //修改之后需要Sync方可生效

@@ -2,6 +2,7 @@ package io.github.zeleven.playa.ui.module.main;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.Keep;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
@@ -24,8 +25,10 @@ import io.github.zeleven.playa.ui.module.main.project.ProjectFragment;
 import io.github.zeleven.playa.ui.module.search.SearchActivity;
 import io.github.zeleven.playa.ui.widget.BottomNavigationViewEx;
 
+//@Keep
 public class MainActivity extends BaseActivity<MainPresenter> implements MainContract.View {
-    @BindView(R.id.bottom_nav) BottomNavigationViewEx bottomNavigationView;
+    @BindView(R.id.bottom_nav)
+    BottomNavigationViewEx bottomNavigationView;
 
     private FragmentManager fragmentManager;
     private List<Fragment> fragmentList = new ArrayList<>();
@@ -133,6 +136,7 @@ public class MainActivity extends BaseActivity<MainPresenter> implements MainCon
 
     /**
      * 根据给定下标选中对应的 fragment
+     *
      * @param index fragment 在列表中的下标
      */
     public void selectFragment(int index) {
