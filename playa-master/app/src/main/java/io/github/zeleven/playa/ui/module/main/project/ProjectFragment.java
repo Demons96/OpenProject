@@ -13,9 +13,14 @@ import io.github.zeleven.playa.ui.adapter.TabViewPagerAdapter;
 import io.github.zeleven.playa.ui.base.BaseFragment;
 import io.github.zeleven.playa.utils.TabViewPagerAdapterItem;
 
+/**
+ * 项目
+ */
 public class ProjectFragment extends BaseFragment<ProjectPresenter> implements ProjectContract.View {
-    @BindView(R.id.tab_layout) TabLayout tabLayout;
-    @BindView(R.id.view_pager) ViewPager viewPager;
+    @BindView(R.id.tab_layout)
+    TabLayout tabLayout;
+    @BindView(R.id.view_pager)
+    ViewPager viewPager;
 
     @Override
     public void onAttach(Context context) {

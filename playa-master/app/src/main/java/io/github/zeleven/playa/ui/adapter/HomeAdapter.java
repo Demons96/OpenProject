@@ -29,6 +29,9 @@ import io.github.zeleven.playa.ui.base.BaseViewHolder;
 import io.github.zeleven.playa.ui.module.browser.BrowserActivity;
 
 public class HomeAdapter extends BaseRecyclerViewAdapter<Article, RecyclerView.ViewHolder> {
+    /**
+     * 轮播图
+     */
     private static final int VIEW_TYPE_HEADER = 0;
     private static final int VIEW_TYPE_ITEM = 1;
     private static final int VIEW_TYPE_FOOTER = 2;
@@ -36,6 +39,11 @@ public class HomeAdapter extends BaseRecyclerViewAdapter<Article, RecyclerView.V
     private FooterViewHolder footerViewHolder;
     private List<Banner> bannerData = new ArrayList<>();
 
+    /**
+     * 设置轮播图
+     *
+     * @param bannerData
+     */
     public void setBannerData(List<Banner> bannerData) {
         this.bannerData = bannerData;
     }
@@ -46,24 +54,36 @@ public class HomeAdapter extends BaseRecyclerViewAdapter<Article, RecyclerView.V
         RecyclerView.ViewHolder viewHolder;
         switch (viewType) {
             case VIEW_TYPE_HEADER:
-                viewHolder = new HeaderViewHolder(LayoutInflater.from(parent.getContext())
-                        .inflate(R.layout.home_header, parent, false));
+                viewHolder = new HeaderViewHolder(getView(parent, R.layout.home_header));
+
+//                viewHolder = new HeaderViewHolder(LayoutInflater.from(parent.getContext())
+//                        .inflate(R.layout.home_header, parent, false));
                 break;
             case VIEW_TYPE_ITEM:
-                viewHolder = new ItemViewHolder(LayoutInflater.from(
-                        parent.getContext()).inflate(R.layout.article_list_item, parent, false));
+                viewHolder = new ItemViewHolder(getView(parent, R.layout.article_list_item));
+
+//                viewHolder = new ItemViewHolder(LayoutInflater.from(parent.getContext())
+//                        .inflate(R.layout.article_list_item, parent, false));
                 break;
             case VIEW_TYPE_FOOTER:
-                viewHolder = new FooterViewHolder(LayoutInflater.from(
-                        parent.getContext()).inflate(R.layout.list_footer, parent, false));
+                viewHolder = new FooterViewHolder(getView(parent, R.layout.list_footer));
+
+//                viewHolder = new FooterViewHolder(LayoutInflater.from(parent.getContext())
+//                        .inflate(R.layout.list_footer, parent, false));
                 footerViewHolder = (FooterViewHolder) viewHolder;
                 break;
             default:
-                viewHolder = new ItemViewHolder(LayoutInflater.from(
-                        parent.getContext()).inflate(0, parent, false));
+                viewHolder = new ItemViewHolder(getView(parent, 0));
+
+//                viewHolder = new ItemViewHolder(LayoutInflater.from(parent.getContext())
+//                        .inflate(0, parent, false));
                 break;
         }
         return viewHolder;
+    }
+
+    private View getView(@NonNull ViewGroup parent, int resource) {
+        return LayoutInflater.from(parent.getContext()).inflate(resource, parent, false);
     }
 
     @Override
@@ -105,8 +125,12 @@ public class HomeAdapter extends BaseRecyclerViewAdapter<Article, RecyclerView.V
         footerViewHolder.footerLayout.setVisibility(View.GONE);
     }
 
+    /**
+     * 轮播图
+     */
     class HeaderViewHolder extends BaseViewHolder<Banner> {
-        @BindView(R.id.banner) com.youth.banner.Banner bannerView;
+        @BindView(R.id.banner)
+        com.youth.banner.Banner bannerView;
 
         public HeaderViewHolder(View itemView) {
             super(itemView);
@@ -147,16 +171,24 @@ public class HomeAdapter extends BaseRecyclerViewAdapter<Article, RecyclerView.V
         }
     }
 
+    /**
+     * 首页列表
+     */
     class ItemViewHolder extends BaseViewHolder<Article> {
         @BindView(R.id.super_chapter_name)
         TextView superChapterName;
-        @BindView(R.id.chapter_name) TextView chapterName;
-        @BindView(R.id.title) TextView title;
+        @BindView(R.id.chapter_name)
+        TextView chapterName;
+        @BindView(R.id.title)
+        TextView title;
         @BindView(R.id.envelope_pic)
         ImageView envelopePic;
-        @BindView(R.id.desc) TextView desc;
-        @BindView(R.id.author) TextView author;
-        @BindView(R.id.pub_date) TextView pubDate;
+        @BindView(R.id.desc)
+        TextView desc;
+        @BindView(R.id.author)
+        TextView author;
+        @BindView(R.id.pub_date)
+        TextView pubDate;
 
         public ItemViewHolder(View itemView) {
             super(itemView);
@@ -199,10 +231,16 @@ public class HomeAdapter extends BaseRecyclerViewAdapter<Article, RecyclerView.V
         }
     }
 
+    /**
+     * 最底部的线
+     */
     class FooterViewHolder extends BaseViewHolder {
-        @BindView(R.id.footer_layout) RelativeLayout footerLayout;
-        @BindView(R.id.progress_bar) ProgressBar progressBar;
-        @BindView(R.id.no_more_text) TextView noMoreText;
+        @BindView(R.id.footer_layout)
+        RelativeLayout footerLayout;
+        @BindView(R.id.progress_bar)
+        ProgressBar progressBar;
+        @BindView(R.id.no_more_text)
+        TextView noMoreText;
 
         public FooterViewHolder(View itemView) {
             super(itemView);

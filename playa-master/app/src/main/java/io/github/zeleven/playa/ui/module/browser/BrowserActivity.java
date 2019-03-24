@@ -23,14 +23,19 @@ import butterknife.BindView;
 import io.github.zeleven.playa.R;
 import io.github.zeleven.playa.ui.base.BaseActivity;
 
+/**
+ * 显示网页
+ */
 public class BrowserActivity extends BaseActivity<BrowserPresenter> implements BrowserContract.View {
     ActionBar actionBar;
 
     private String url;
     private String title;
 
-    @BindView(R.id.progress_bar) ProgressBar progressBar;
-    @BindView(R.id.web_view) WebView webView;
+    @BindView(R.id.progress_bar)
+    ProgressBar progressBar;
+    @BindView(R.id.web_view)
+    WebView webView;
 
     @Override
     public int getLayout() {

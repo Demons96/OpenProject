@@ -22,6 +22,9 @@ import io.github.zeleven.playa.ui.base.BaseFragment;
 import io.github.zeleven.playa.ui.module.account.AccountActivity;
 import io.github.zeleven.playa.ui.module.settings.SettingsActivity;
 
+/**
+ * 我的
+ */
 public class MineFragment extends BaseFragment<MinePresenter> implements MineContract.View {
     @BindView(R.id.login_card) CardView loginCard;
     @BindView(R.id.user_info_card) CardView userInfoCard;

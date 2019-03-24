@@ -17,6 +17,9 @@ import q.rorbin.verticaltablayout.adapter.TabAdapter;
 import q.rorbin.verticaltablayout.widget.ITabView;
 import q.rorbin.verticaltablayout.widget.TabView;
 
+/**
+ * 导航
+ */
 public class NavigationFragment extends BaseFragment<NavigationPresenter>
         implements NavigationContract.View {
     @BindView(R.id.vertical_tab_layout) VerticalTabLayout verticalTabLayout;

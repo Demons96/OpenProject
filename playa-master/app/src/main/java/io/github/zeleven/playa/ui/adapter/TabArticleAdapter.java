@@ -84,11 +84,16 @@ public class TabArticleAdapter extends BaseRecyclerViewAdapter<Article, Recycler
     }
 
     class ItemViewHolder extends BaseViewHolder<Article> {
-        @BindView(R.id.title) TextView title;
-        @BindView(R.id.envelope_pic) ImageView envelopePic;
-        @BindView(R.id.desc) TextView desc;
-        @BindView(R.id.author) TextView author;
-        @BindView(R.id.pub_date) TextView pubDate;
+        @BindView(R.id.title)
+        TextView title;
+        @BindView(R.id.envelope_pic)
+        ImageView envelopePic;
+        @BindView(R.id.desc)
+        TextView desc;
+        @BindView(R.id.author)
+        TextView author;
+        @BindView(R.id.pub_date)
+        TextView pubDate;
 
         public ItemViewHolder(View itemView) {
             super(itemView);
@@ -129,9 +134,12 @@ public class TabArticleAdapter extends BaseRecyclerViewAdapter<Article, Recycler
     }
 
     class FooterViewHolder extends BaseViewHolder {
-        @BindView(R.id.footer_layout) RelativeLayout footerLayout;
-        @BindView(R.id.progress_bar) ProgressBar progressBar;
-        @BindView(R.id.no_more_text) TextView noMoreText;
+        @BindView(R.id.footer_layout)
+        RelativeLayout footerLayout;
+        @BindView(R.id.progress_bar)
+        ProgressBar progressBar;
+        @BindView(R.id.no_more_text)
+        TextView noMoreText;
 
         public FooterViewHolder(View itemView) {
             super(itemView);

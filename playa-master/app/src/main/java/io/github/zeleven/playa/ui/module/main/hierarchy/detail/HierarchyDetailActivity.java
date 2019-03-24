@@ -16,8 +16,10 @@ import io.github.zeleven.playa.utils.TabViewPagerAdapterItem;
 
 public class HierarchyDetailActivity extends BaseActivity<HierarchyDetailPresenter>
         implements HierarchyDetailContract.View {
-    @BindView(R.id.tab_layout) TabLayout tabLayout;
-    @BindView(R.id.view_pager) ViewPager viewPager;
+    @BindView(R.id.tab_layout)
+    TabLayout tabLayout;
+    @BindView(R.id.view_pager)
+    ViewPager viewPager;
 
     private Category hierarchyCategory;
 

@@ -13,6 +13,9 @@ import io.github.zeleven.playa.ui.adapter.TabArticleAdapter;
 import io.github.zeleven.playa.ui.base.BaseListFragment;
 import io.github.zeleven.playa.ui.listener.EndlessRecyclerViewScrollListener;
 
+/**
+ * 项目列表数据
+ */
 public class ProjectTabPageFragment extends BaseListFragment<ProjectTabPagePresenter>
         implements ProjectTabPageContract.View {
 
@@ -20,9 +23,9 @@ public class ProjectTabPageFragment extends BaseListFragment<ProjectTabPagePrese
     private TabArticleAdapter articleAdapter;
 
     public static ProjectTabPageFragment newInstance(int cid) {
+        ProjectTabPageFragment fragment = new ProjectTabPageFragment();
         Bundle args = new Bundle();
         args.putInt("CID", cid);
-        ProjectTabPageFragment fragment = new ProjectTabPageFragment();
         fragment.setArguments(args);
         return fragment;
     }
@@ -79,7 +82,7 @@ public class ProjectTabPageFragment extends BaseListFragment<ProjectTabPagePrese
             swipeRefreshLayout.setRefreshing(false);
             articleAdapter.setData(data);
         } else {
-            if ((data != null && data.size() == 0) || data == null) {
+            if (data == null || data.size() == 0) {
                 articleAdapter.setNoMore();
             } else {
                 articleAdapter.appendItems(data);

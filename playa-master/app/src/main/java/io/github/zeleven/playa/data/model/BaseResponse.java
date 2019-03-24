@@ -1,5 +1,9 @@
 package io.github.zeleven.playa.data.model;
 
+/**
+ * 服务器返回数据的第一层结构
+ * @param <T>
+ */
 public class BaseResponse<T> {
     private int errorCode;
     private String errorMsg;

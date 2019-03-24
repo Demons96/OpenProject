@@ -34,8 +34,10 @@ public class HierarchyAdapter extends BaseRecyclerViewAdapter<Category, Hierarch
     }
 
     public class ViewHolder extends BaseViewHolder<Category> {
-        @BindView(R.id.parent_name) TextView parentName;
-        @BindView(R.id.flex_box) FlexboxLayout flexboxLayout;
+        @BindView(R.id.parent_name)
+        TextView parentName;
+        @BindView(R.id.flex_box)
+        FlexboxLayout flexboxLayout;
 
         public ViewHolder(View itemView) {
             super(itemView);

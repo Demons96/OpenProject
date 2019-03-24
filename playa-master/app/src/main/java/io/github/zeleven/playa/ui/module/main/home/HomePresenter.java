@@ -39,6 +39,11 @@ public class HomePresenter extends BasePresenter<HomeContract.View>
         }
     }
 
+    /**
+     * 获取首页文章数据
+     *
+     * @param page
+     */
     @SuppressLint("CheckResult")
     @Override
     public void getArticles(final int page) {
@@ -52,29 +57,33 @@ public class HomePresenter extends BasePresenter<HomeContract.View>
                             throws Exception {
                         return response.getData().getDatas();
                     }
-                }).subscribeWith(new Observer<List<Article>>() {
-            @Override
-            public void onSubscribe(@NonNull Disposable d) {
-                disposable.add(d);
-            }
+                })
+                .subscribeWith(new Observer<List<Article>>() {
+                    @Override
+                    public void onSubscribe(@NonNull Disposable d) {
+                        disposable.add(d);
+                    }
 
-            @Override
-            public void onNext(@NonNull List<Article> articles) {
-                getView().showArticles(page, articles);
-            }
+                    @Override
+                    public void onNext(@NonNull List<Article> articles) {
+                        getView().showArticles(page, articles);
+                    }
 
-            @Override
-            public void onError(@NonNull Throwable e) {
-                getView().showError(e.getMessage());
-            }
+                    @Override
+                    public void onError(@NonNull Throwable e) {
+                        getView().showError(e.getMessage());
+                    }
 
-            @Override
-            public void onComplete() {
+                    @Override
+                    public void onComplete() {
 
-            }
-        });
+                    }
+                });
     }
 
+    /**
+     * 获取首页 banner 数据
+     */
     @Override
     public void getBannerData() {
         Observable<BaseResponse<List<Banner>>> observable = dataManager.getBannerData();
@@ -86,26 +95,27 @@ public class HomePresenter extends BasePresenter<HomeContract.View>
                             throws Exception {
                         return response.getData();
                     }
-                }).subscribeWith(new Observer<List<Banner>>() {
-            @Override
-            public void onSubscribe(@NonNull Disposable d) {
-                disposable.add(d);
-            }
+                })
+                .subscribeWith(new Observer<List<Banner>>() {
+                    @Override
+                    public void onSubscribe(@NonNull Disposable d) {
+                        disposable.add(d);
+                    }
 
-            @Override
-            public void onNext(@NonNull List<Banner> banners) {
-                getView().showBannerData(banners);
-            }
+                    @Override
+                    public void onNext(@NonNull List<Banner> banners) {
+                        getView().showBannerData(banners);
+                    }
 
-            @Override
-            public void onError(@NonNull Throwable e) {
+                    @Override
+                    public void onError(@NonNull Throwable e) {
 
-            }
+                    }
 
-            @Override
-            public void onComplete() {
+                    @Override
+                    public void onComplete() {
 
-            }
-        });
+                    }
+                });
     }
 }

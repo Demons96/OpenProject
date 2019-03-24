@@ -10,6 +10,9 @@ import io.github.zeleven.playa.data.model.Category;
 import io.github.zeleven.playa.ui.adapter.HierarchyAdapter;
 import io.github.zeleven.playa.ui.base.BaseListFragment;
 
+/**
+ * 体系
+ */
 public class HierarchyFragment extends BaseListFragment<HierarchyPresenter>
         implements HierarchyContract.View {
 

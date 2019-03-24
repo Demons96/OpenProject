@@ -13,6 +13,9 @@ import io.github.zeleven.playa.ui.adapter.HomeAdapter;
 import io.github.zeleven.playa.ui.base.BaseListFragment;
 import io.github.zeleven.playa.ui.listener.EndlessRecyclerViewScrollListener;
 
+/**
+ * 首页
+ */
 public class HomeFragment extends BaseListFragment<HomePresenter> implements HomeContract.View {
 
     private HomeAdapter homeAdapter;
@@ -63,13 +66,19 @@ public class HomeFragment extends BaseListFragment<HomePresenter> implements Hom
         presenter.getArticles(0);
     }
 
+    /**
+     * 获取首页文章数据
+     *
+     * @param page
+     * @param data
+     */
     @Override
     public void showArticles(int page, List<Article> data) {
         if (page == 0) {
             swipeRefreshLayout.setRefreshing(false);
             homeAdapter.setData(data);
         } else if (page > 0) {
-            if ((data != null && data.size() == 0) || data == null) {
+            if (data == null || data.size() == 0) {
                 homeAdapter.setNoMore();
             } else {
                 homeAdapter.appendItems(data);

@@ -2,6 +2,9 @@ package io.github.zeleven.playa.data.model;
 
 import java.util.List;
 
+/**
+ * 列表数据的第一层
+ */
 public class ArticleListResponse {
     private int curPage;
     private List<Article> datas;

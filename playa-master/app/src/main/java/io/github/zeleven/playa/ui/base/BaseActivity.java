@@ -1,5 +1,6 @@
 package io.github.zeleven.playa.ui.base;
 
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.AppBarLayout;
@@ -19,12 +20,17 @@ import io.github.zeleven.playa.di.component.DaggerActivityComponent;
 import io.github.zeleven.playa.ui.module.main.MainActivity;
 import io.github.zeleven.playa.utils.NetworkUtils;
 
-public abstract class BaseActivity<P extends BaseContract.Presenter>
-        extends AppCompatActivity implements BaseContract.View {
-    @Inject protected P presenter;
+public abstract class BaseActivity<P extends BaseContract.Presenter> extends AppCompatActivity
+        implements BaseContract.View {
+    @Inject
+    protected P presenter;
 
-    @Nullable @BindView(R.id.toolbar) protected Toolbar toolbar;
-    @Nullable @BindView(R.id.appbar_layout) protected AppBarLayout appbarLayout;
+    @Nullable
+    @BindView(R.id.toolbar)
+    protected Toolbar toolbar;
+    @Nullable
+    @BindView(R.id.appbar_layout)
+    protected AppBarLayout appbarLayout;
 
     protected ActivityComponent activityComponent;
 
@@ -68,7 +74,10 @@ public abstract class BaseActivity<P extends BaseContract.Presenter>
 
     public void enableAppBarElevation(boolean enable) {
         if (appbarLayout != null) {
-            appbarLayout.setElevation(enable ? getResources().getDimension(R.dimen.four_dp) : 0.0f);
+            // 5.0 以下的系统没有 setElevation 方法
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                appbarLayout.setElevation(enable ? getResources().getDimension(R.dimen.four_dp) : 0.0f);
+            }
         }
     }
 

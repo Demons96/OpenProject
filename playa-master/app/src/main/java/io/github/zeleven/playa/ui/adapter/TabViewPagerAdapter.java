@@ -9,6 +9,9 @@ import java.util.List;
 
 import io.github.zeleven.playa.utils.TabViewPagerAdapterItem;
 
+/**
+ * 顶部导航栏联合 ViewPager 适配器
+ */
 public class TabViewPagerAdapter extends FragmentStatePagerAdapter {
     private List<TabViewPagerAdapterItem> itemList;
 
