@@ -26,9 +26,12 @@ import io.github.zeleven.playa.ui.module.settings.SettingsActivity;
  * 我的
  */
 public class MineFragment extends BaseFragment<MinePresenter> implements MineContract.View {
-    @BindView(R.id.login_card) CardView loginCard;
-    @BindView(R.id.user_info_card) CardView userInfoCard;
-    @BindView(R.id.username) TextView username;
+    @BindView(R.id.login_card)
+    CardView loginCard;
+    @BindView(R.id.user_info_card)
+    CardView userInfoCard;
+    @BindView(R.id.username)
+    TextView username;
 
     @Override
     public void onAttach(Context context) {

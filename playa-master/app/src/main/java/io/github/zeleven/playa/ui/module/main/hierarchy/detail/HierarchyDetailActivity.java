@@ -16,12 +16,11 @@ import io.github.zeleven.playa.utils.TabViewPagerAdapterItem;
 
 public class HierarchyDetailActivity extends BaseActivity<HierarchyDetailPresenter>
         implements HierarchyDetailContract.View {
+
     @BindView(R.id.tab_layout)
     TabLayout tabLayout;
     @BindView(R.id.view_pager)
     ViewPager viewPager;
-
-    private Category hierarchyCategory;
 
     @Override
     public int getLayout() {
@@ -33,7 +32,7 @@ public class HierarchyDetailActivity extends BaseActivity<HierarchyDetailPresent
         super.onCreate(savedInstanceState);
 
         String categoryJson = getIntent().getStringExtra("CATEGORY_JSON");
-        hierarchyCategory = new Gson().fromJson(categoryJson, Category.class);
+        Category hierarchyCategory = new Gson().fromJson(categoryJson, Category.class);
 
         if (getSupportActionBar() != null) {
             getSupportActionBar().setTitle(hierarchyCategory.getName());

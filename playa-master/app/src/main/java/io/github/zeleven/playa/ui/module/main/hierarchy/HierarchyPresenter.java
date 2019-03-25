@@ -39,33 +39,33 @@ public class HierarchyPresenter extends BasePresenter<HierarchyContract.View>
         Observable<BaseResponse<List<Category>>> observable = dataManager.getHierarchyCategories();
         observable.observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io())
-                .map(new Function<BaseResponse<List<Category>>,
-                List<Category>>() {
-            @Override
-            public List<Category> apply(@NonNull BaseResponse<List<Category>> response)
-                    throws Exception {
-                return response.getData();
-            }
-        }).subscribeWith(new Observer<List<Category>>() {
-            @Override
-            public void onSubscribe(@NonNull Disposable d) {
-                disposable = d;
-            }
+                .map(new Function<BaseResponse<List<Category>>, List<Category>>() {
+                    @Override
+                    public List<Category> apply(@NonNull BaseResponse<List<Category>> response) throws Exception {
+                        return response.getData();
+                    }
+                })
+                .subscribe(new Observer<List<Category>>() {
+                    @Override
+                    public void onSubscribe(@NonNull Disposable d) {
+                        disposable = d;
+                    }
 
-            @Override
-            public void onNext(@NonNull List<Category> categories) {
-                getView().showHierarchyCategories(categories);
-            }
+                    @Override
+                    public void onNext(@NonNull List<Category> categories) {
+                        getView().showHierarchyCategories(categories);
+                    }
 
-            @Override
-            public void onError(@NonNull Throwable e) {
+                    @Override
+                    public void onError(@NonNull Throwable e) {
 
-            }
+                    }
 
-            @Override
-            public void onComplete() {
+                    @Override
+                    public void onComplete() {
 
-            }
-        });
+                    }
+                });
+
     }
 }

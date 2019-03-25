@@ -22,8 +22,10 @@ import q.rorbin.verticaltablayout.widget.TabView;
  */
 public class NavigationFragment extends BaseFragment<NavigationPresenter>
         implements NavigationContract.View {
-    @BindView(R.id.vertical_tab_layout) VerticalTabLayout verticalTabLayout;
-    @BindView(R.id.recycler_view) RecyclerView recyclerView;
+    @BindView(R.id.vertical_tab_layout)
+    VerticalTabLayout verticalTabLayout;
+    @BindView(R.id.recycler_view)
+    RecyclerView recyclerView;
 
     private NavigationAdapter adapter;
     private LinearLayoutManager layoutManager;
@@ -90,8 +92,10 @@ public class NavigationFragment extends BaseFragment<NavigationPresenter>
             public ITabView.TabTitle getTitle(int position) {
                 return new ITabView.TabTitle.Builder()
                         .setContent(categories.get(position).getName())
-                        .setTextColor(ContextCompat.getColor(context, R.color.colorAccent),
-                                ContextCompat.getColor(context, android.R.color.black))
+                        .setTextColor(
+                                ContextCompat.getColor(context, R.color.colorAccent),
+                                ContextCompat.getColor(context, android.R.color.black)
+                        )
                         .build();
             }
 
@@ -113,7 +117,7 @@ public class NavigationFragment extends BaseFragment<NavigationPresenter>
             int top = recyclerView.getChildAt(position - firstVisibleItemPosition).getTop();
             recyclerView.scrollBy(0, top);
         } else {
-           recyclerView.smoothScrollToPosition(position);
+            recyclerView.smoothScrollToPosition(position);
         }
     }
 }

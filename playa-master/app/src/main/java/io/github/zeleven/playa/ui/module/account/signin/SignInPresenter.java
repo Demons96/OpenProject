@@ -54,29 +54,30 @@ public class SignInPresenter extends BasePresenter<SignInContract.View>
                             throws Exception {
                         return response.getData();
                     }
-                }).subscribeWith(new Observer<LoginResponse>() {
-            @Override
-            public void onSubscribe(@NonNull Disposable d) {
-                disposable = d;
-            }
+                })
+                .subscribe(new Observer<LoginResponse>() {
+                    @Override
+                    public void onSubscribe(@NonNull Disposable d) {
+                        disposable = d;
+                    }
 
-            @Override
-            public void onNext(@NonNull LoginResponse loginResponse) {
-                dataManager.saveLoggedInUser(
-                        loginResponse.getUsername(), loginResponse.getPassword(), true
-                );
-                getView().loginSuccessful(loginResponse.getUsername());
-            }
+                    @Override
+                    public void onNext(@NonNull LoginResponse loginResponse) {
+                        dataManager.saveLoggedInUser(
+                                loginResponse.getUsername(), loginResponse.getPassword(), true
+                        );
+                        getView().loginSuccessful(loginResponse.getUsername());
+                    }
 
-            @Override
-            public void onError(@NonNull Throwable e) {
-                getView().showError(e.getMessage());
-            }
+                    @Override
+                    public void onError(@NonNull Throwable e) {
+                        getView().showError(e.getMessage());
+                    }
 
-            @Override
-            public void onComplete() {
+                    @Override
+                    public void onComplete() {
 
-            }
-        });
+                    }
+                });
     }
 }

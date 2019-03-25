@@ -3,9 +3,9 @@ package io.github.zeleven.playa.data.model;
 import java.util.List;
 
 public class NavCategory {
-	private List<Article> articles;
-	private int cid;
-	private String name;
+    private List<Article> articles;
+    private int cid;
+    private String name;
 
     public List<Article> getArticles() {
         return articles;

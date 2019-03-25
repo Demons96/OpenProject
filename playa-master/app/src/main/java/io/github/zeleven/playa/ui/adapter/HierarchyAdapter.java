@@ -50,14 +50,14 @@ public class HierarchyAdapter extends BaseRecyclerViewAdapter<Category, Hierarch
             List<Category> childList = data.getChildren();
             LayoutInflater layoutInflater = LayoutInflater.from(itemView.getContext());
             TextView textView;
+
+            flexboxLayout.removeAllViews();
             for (int i = 0; i < childList.size(); i++) {
-                textView = (TextView) layoutInflater.inflate(
-                        R.layout.hierarchy_child_list_item, null);
+                textView = (TextView) layoutInflater.inflate(R.layout.hierarchy_child_list_item, null);
                 textView.setText(childList.get(i).getName());
                 flexboxLayout.addView(textView);
 
-                FlexboxLayout.LayoutParams layoutParams =
-                        (FlexboxLayout.LayoutParams) textView.getLayoutParams();
+                FlexboxLayout.LayoutParams layoutParams = (FlexboxLayout.LayoutParams) textView.getLayoutParams();
                 layoutParams.setMargins(0, 0, 16, 16);
                 textView.setLayoutParams(layoutParams);
             }
