@@ -13,3 +13,7 @@
 
 ## 数据库
 - [greenDAO-master](https://github.com/greenrobot/greenDAO)
+
+## 讲解设计框架的 demo
+- [Android-CleanArchitecture-Kotlin-master](https://github.com/android10/Android-CleanArchitecture-Kotlin)
+- [Android-CleanArchitecture](https://github.com/android10/Android-CleanArchitecture)
