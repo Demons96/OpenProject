@@ -2,15 +2,18 @@ package io.github.zeleven.playa.data.model;
 
 import java.util.List;
 
+/**
+ * 登录返回的实体
+ */
 public class LoginResponse {
-	private String email;
-	private String username;
-	private String password;
-	private String token;
-	private long id;
-	private int type;
-	private String icon;
-	private List<Integer> collectIds;
+    private String email;
+    private String username;
+    private String password;
+    private String token;
+    private long id;
+    private int type;
+    private String icon;
+    private List<Integer> collectIds;
 
     public String getEmail() {
         return email;

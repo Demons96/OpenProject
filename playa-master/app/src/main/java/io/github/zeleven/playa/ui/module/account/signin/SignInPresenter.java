@@ -40,18 +40,19 @@ public class SignInPresenter extends BasePresenter<SignInContract.View>
         if (isUsernameEmpty) {
             return;
         }
+
         boolean isPasswordEmpty = StringUtils.isEmpty(password);
         getView().passwordEmpty(isPasswordEmpty);
         if (isPasswordEmpty) {
             return;
         }
-        Observable<BaseResponse<LoginResponse>> observable = dataManager.signin(username, password);
+
+        Observable<BaseResponse<LoginResponse>> observable = dataManager.signIn(username, password);
         observable.observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io())
                 .map(new Function<BaseResponse<LoginResponse>, LoginResponse>() {
                     @Override
-                    public LoginResponse apply(@NonNull BaseResponse<LoginResponse> response)
-                            throws Exception {
+                    public LoginResponse apply(@NonNull BaseResponse<LoginResponse> response) throws Exception {
                         return response.getData();
                     }
                 })
@@ -66,6 +67,7 @@ public class SignInPresenter extends BasePresenter<SignInContract.View>
                         dataManager.saveLoggedInUser(
                                 loginResponse.getUsername(), loginResponse.getPassword(), true
                         );
+
                         getView().loginSuccessful(loginResponse.getUsername());
                     }
 

@@ -13,6 +13,8 @@ import io.github.zeleven.playa.di.module.ApplicationModule;
 @Component(modules = ApplicationModule.class)
 public interface ApplicationComponent {
     Application application();
+
     DataManager dataManager();
+
     DatabaseHelper databaseHelper();
 }

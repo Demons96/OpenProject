@@ -10,6 +10,9 @@ import io.github.zeleven.playa.ui.base.BaseActivity;
 import io.github.zeleven.playa.ui.module.search.result.SearchResultFragment;
 import io.github.zeleven.playa.ui.module.search.suggest.SearchSuggestFragment;
 
+/**
+ * 搜索界面
+ */
 public class SearchActivity extends BaseActivity {
     @Override
     public int getLayout() {

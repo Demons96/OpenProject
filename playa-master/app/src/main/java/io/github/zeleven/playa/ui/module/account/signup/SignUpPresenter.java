@@ -45,26 +45,26 @@ public class SignUpPresenter extends BasePresenter<SignUpContract.View>
                         return response.getData();
                     }
                 })
-                .subscribeWith(new Observer<LoginResponse>() {
-            @Override
-            public void onSubscribe(@NonNull Disposable d) {
-                disposable = d;
-            }
+                .subscribe(new Observer<LoginResponse>() {
+                    @Override
+                    public void onSubscribe(@NonNull Disposable d) {
+                        disposable = d;
+                    }
 
-            @Override
-            public void onNext(@NonNull LoginResponse loginResponse) {
+                    @Override
+                    public void onNext(@NonNull LoginResponse loginResponse) {
 
-            }
+                    }
 
-            @Override
-            public void onError(@NonNull Throwable e) {
+                    @Override
+                    public void onError(@NonNull Throwable e) {
 
-            }
+                    }
 
-            @Override
-            public void onComplete() {
+                    @Override
+                    public void onComplete() {
 
-            }
-        });
+                    }
+                });
     }
 }

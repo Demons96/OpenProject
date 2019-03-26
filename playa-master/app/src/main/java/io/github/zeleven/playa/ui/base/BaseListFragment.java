@@ -13,8 +13,11 @@ import io.github.zeleven.playa.R;
 import io.github.zeleven.playa.ui.listener.EndlessRecyclerViewScrollListener;
 
 public abstract class BaseListFragment<P extends BaseContract.Presenter> extends BaseFragment<P> {
-    @Nullable @BindView(R.id.swipe_refresh_layout) protected SwipeRefreshLayout swipeRefreshLayout;
-    @BindView(R.id.recycler_view) protected RecyclerView recyclerView;
+    @Nullable
+    @BindView(R.id.swipe_refresh_layout)
+    protected SwipeRefreshLayout swipeRefreshLayout;
+    @BindView(R.id.recycler_view)
+    protected RecyclerView recyclerView;
 
     protected LinearLayoutManager layoutManager;
     protected EndlessRecyclerViewScrollListener recyclerViewScrollListener;

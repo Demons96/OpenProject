@@ -19,14 +19,24 @@ import io.github.zeleven.playa.ui.module.search.suggest.SearchSuggestFragment;
 @Component(modules = FragmentModule.class, dependencies = ApplicationComponent.class)
 public interface FragmentComponent {
     void inject(HomeFragment homeFragment);
+
     void inject(ProjectFragment projectFragment);
+
     void inject(ProjectTabPageFragment projectTabPageFragment);
+
     void inject(HierarchyFragment hierarchyFragment);
+
     void inject(HierarchyTabPageFragment hierarchyTabPageFragment);
+
     void inject(NavigationFragment navigationFragment);
+
     void inject(MineFragment mineFragment);
+
     void inject(SearchResultFragment searchResultFragment);
+
     void inject(SearchSuggestFragment searchSuggestFragment);
+
     void inject(SignInFragment signInFragment);
+
     void inject(SignUpFragment signUpFragment);
 }

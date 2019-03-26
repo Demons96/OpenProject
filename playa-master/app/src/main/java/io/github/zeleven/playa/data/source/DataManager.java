@@ -18,9 +18,18 @@ import io.github.zeleven.playa.data.source.local.DatabaseHelper;
 import io.github.zeleven.playa.data.source.remote.WanAndroidService;
 import io.reactivex.Observable;
 
+/**
+ * 数据管理类
+ */
 @Singleton
 public class DataManager {
+    /**
+     * 服务器数据
+     */
     private WanAndroidService wanAndroidService;
+    /**
+     * 数据库数据
+     */
     private DatabaseHelper databaseHelper;
 
     @Inject
@@ -65,7 +74,7 @@ public class DataManager {
         return wanAndroidService.searchArticles(page, keyword);
     }
 
-    public Observable<BaseResponse<LoginResponse>> signin(String username, String password) {
+    public Observable<BaseResponse<LoginResponse>> signIn(String username, String password) {
         return wanAndroidService.signin(username, password);
     }
 

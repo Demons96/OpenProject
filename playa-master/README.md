@@ -58,3 +58,15 @@
 
 ## License
 MIT协议，详细内容请查看[LICENSE文件](/LICENSE)
+
+## 读者备注
+
+1. 需了解的内容
+
+- javax.inject 包下的各种类
+```
+import javax.inject.Inject;
+import javax.inject.Singleton;
+```
+- 注解的使用
+- dagger

@@ -69,6 +69,9 @@ public class MineFragment extends BaseFragment<MinePresenter> implements MineCon
         context.startActivity(new Intent(context, SettingsActivity.class));
     }
 
+    /**
+     * 查詢是否登陸 显示用户信息
+     */
     public void setLoggedInUserInfo() {
         if (presenter.isLogin()) {
             loginCard.setVisibility(View.GONE);
@@ -106,6 +109,7 @@ public class MineFragment extends BaseFragment<MinePresenter> implements MineCon
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void loginEvent(LoginEvent loginEvent) {
         Toast.makeText(context, "已登录", Toast.LENGTH_SHORT).show();
+
         if (loginEvent.isLogin()) {
             loginCard.setVisibility(View.GONE);
             userInfoCard.setVisibility(View.VISIBLE);

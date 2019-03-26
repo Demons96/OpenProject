@@ -20,8 +20,8 @@ import io.github.zeleven.playa.di.component.DaggerActivityComponent;
 import io.github.zeleven.playa.ui.module.main.MainActivity;
 import io.github.zeleven.playa.utils.NetworkUtils;
 
-public abstract class BaseActivity<P extends BaseContract.Presenter> extends AppCompatActivity
-        implements BaseContract.View {
+public abstract class BaseActivity<P extends BaseContract.Presenter>
+        extends AppCompatActivity implements BaseContract.View {
     @Inject
     protected P presenter;
 

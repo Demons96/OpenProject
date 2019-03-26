@@ -11,9 +11,12 @@ public class BaseViewHolder<D> extends RecyclerView.ViewHolder {
         ButterKnife.bind(this, itemView);
     }
 
-    public void bind() {}
+    public void bind() {
+    }
 
-    public void bind(D data) {}
+    public void bind(D data) {
+    }
 
-    public void bind(D data, int position) {}
+    public void bind(D data, int position) {
+    }
 }

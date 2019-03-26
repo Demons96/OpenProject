@@ -17,6 +17,9 @@ import retrofit2.http.POST;
 import retrofit2.http.Path;
 import retrofit2.http.Query;
 
+/**
+ * 相关接口
+ */
 public interface WanAndroidService {
     // 获取首页文章数据
     @GET("article/list/{page}/json")

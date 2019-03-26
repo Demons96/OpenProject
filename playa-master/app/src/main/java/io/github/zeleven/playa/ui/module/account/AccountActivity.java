@@ -7,6 +7,9 @@ import io.github.zeleven.playa.R;
 import io.github.zeleven.playa.ui.base.BaseActivity;
 import io.github.zeleven.playa.ui.module.account.signin.SignInFragment;
 
+/**
+ * 账号相关
+ */
 public class AccountActivity extends BaseActivity {
     @Override
     public int getLayout() {
