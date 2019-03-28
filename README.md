@@ -8,6 +8,9 @@
 ## 视频应用
 - [bilibili-android-client-master](https://github.com/HotBitmapGG/bilibili-android-client)
 
+## 视频拍摄以及解压
+- [small-video-record-master](https://github.com/mabeijianxi/small-video-record)
+
 ## 博客
 - [android-tech-frontier-master](https://github.com/hehonghui/android-tech-frontier)
 
