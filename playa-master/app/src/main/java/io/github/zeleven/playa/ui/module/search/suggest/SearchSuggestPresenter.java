@@ -45,27 +45,28 @@ public class SearchSuggestPresenter extends BasePresenter<SearchSuggestContract.
                             throws Exception {
                         return response.getData();
                     }
-                }).subscribeWith(new Observer<List<HotKey>>() {
-            @Override
-            public void onSubscribe(@NonNull Disposable d) {
-                disposable = d;
-            }
+                })
+                .subscribe(new Observer<List<HotKey>>() {
+                    @Override
+                    public void onSubscribe(@NonNull Disposable d) {
+                        disposable = d;
+                    }
 
-            @Override
-            public void onNext(@NonNull List<HotKey> hotKeys) {
-                getView().showHotKey(hotKeys);
-            }
+                    @Override
+                    public void onNext(@NonNull List<HotKey> hotKeys) {
+                        getView().showHotKey(hotKeys);
+                    }
 
-            @Override
-            public void onError(@NonNull Throwable e) {
+                    @Override
+                    public void onError(@NonNull Throwable e) {
 
-            }
+                    }
 
-            @Override
-            public void onComplete() {
+                    @Override
+                    public void onComplete() {
 
-            }
-        });
+                    }
+                });
     }
 
     @Override

@@ -26,9 +26,12 @@ import io.github.zeleven.playa.ui.module.settings.SettingsActivity;
  * 我的
  */
 public class MineFragment extends BaseFragment<MinePresenter> implements MineContract.View {
-    @BindView(R.id.login_card) CardView loginCard;
-    @BindView(R.id.user_info_card) CardView userInfoCard;
-    @BindView(R.id.username) TextView username;
+    @BindView(R.id.login_card)
+    CardView loginCard;
+    @BindView(R.id.user_info_card)
+    CardView userInfoCard;
+    @BindView(R.id.username)
+    TextView username;
 
     @Override
     public void onAttach(Context context) {
@@ -66,6 +69,9 @@ public class MineFragment extends BaseFragment<MinePresenter> implements MineCon
         context.startActivity(new Intent(context, SettingsActivity.class));
     }
 
+    /**
+     * 查詢是否登陸 显示用户信息
+     */
     public void setLoggedInUserInfo() {
         if (presenter.isLogin()) {
             loginCard.setVisibility(View.GONE);
@@ -103,6 +109,7 @@ public class MineFragment extends BaseFragment<MinePresenter> implements MineCon
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void loginEvent(LoginEvent loginEvent) {
         Toast.makeText(context, "已登录", Toast.LENGTH_SHORT).show();
+
         if (loginEvent.isLogin()) {
             loginCard.setVisibility(View.GONE);
             userInfoCard.setVisibility(View.VISIBLE);

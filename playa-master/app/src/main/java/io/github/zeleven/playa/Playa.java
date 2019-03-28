@@ -16,6 +16,7 @@ public class Playa extends Application {
         applicationComponent = DaggerApplicationComponent.builder()
                 .applicationModule(new ApplicationModule(this))
                 .build();
+
         Realm.init(this);
     }
 

@@ -5,6 +5,9 @@ import android.content.Context;
 import io.github.zeleven.playa.R;
 import io.github.zeleven.playa.ui.base.BaseFragment;
 
+/**
+ * 注册
+ */
 public class SignUpFragment extends BaseFragment<SignUpPresenter> implements SignUpContract.View {
 
     @Override

@@ -10,6 +10,9 @@ import io.github.zeleven.playa.data.model.User;
 import io.realm.Realm;
 import io.realm.RealmResults;
 
+/**
+ * 数据库操作类
+ */
 @Singleton
 public class DatabaseHelper {
     private Realm realm = Realm.getDefaultInstance();

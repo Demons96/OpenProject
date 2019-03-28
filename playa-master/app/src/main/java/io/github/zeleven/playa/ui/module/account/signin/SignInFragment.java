@@ -1,7 +1,6 @@
 package io.github.zeleven.playa.ui.module.account.signin;
 
 import android.content.Context;
-import android.content.Intent;
 import android.support.design.widget.TextInputEditText;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -15,13 +14,19 @@ import io.github.zeleven.playa.R;
 import io.github.zeleven.playa.eventbus.LoginEvent;
 import io.github.zeleven.playa.ui.base.BaseFragment;
 import io.github.zeleven.playa.ui.module.account.signup.SignUpFragment;
-import io.github.zeleven.playa.ui.module.main.MainActivity;
 
+/**
+ * 登录
+ */
 public class SignInFragment extends BaseFragment<SignInPresenter> implements SignInContract.View {
-    @BindView(R.id.username_input_layout) TextInputLayout usernameInputLayout;
-    @BindView(R.id.password_input_layout) TextInputLayout passwordInputLayout;
-    @BindView(R.id.username_input) TextInputEditText usernameInput;
-    @BindView(R.id.password_input) TextInputEditText passwordInput;
+    @BindView(R.id.username_input_layout)
+    TextInputLayout usernameInputLayout;
+    @BindView(R.id.password_input_layout)
+    TextInputLayout passwordInputLayout;
+    @BindView(R.id.username_input)
+    TextInputEditText usernameInput;
+    @BindView(R.id.password_input)
+    TextInputEditText passwordInput;
 
     @Override
     public void onAttach(Context context) {
@@ -50,7 +55,7 @@ public class SignInFragment extends BaseFragment<SignInPresenter> implements Sig
     }
 
     @OnClick(R.id.link_signup)
-    public void switchToSignup() {
+    public void switchToSignUp() {
         ((AppCompatActivity) context).getSupportFragmentManager()
                 .beginTransaction()
                 .replace(R.id.fragment_container, new SignUpFragment())

@@ -20,6 +20,7 @@
         <android.support.design.widget.TabLayout
             android:id="@+id/tab_layout"
             android:layout_width="match_parent"
+            app:tabTextAppearance="@style/TabLayoutTextStyle"
             android:layout_height="wrap_content"
             android:background="@color/colorPrimary"
             app:tabMode="scrollable" />

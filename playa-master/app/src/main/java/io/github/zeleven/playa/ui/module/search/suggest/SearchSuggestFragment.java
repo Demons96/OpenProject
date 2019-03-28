@@ -23,9 +23,12 @@ import io.github.zeleven.playa.ui.base.BaseFragment;
 
 public class SearchSuggestFragment extends BaseFragment<SearchSuggestPresenter>
         implements SearchSuggestContract.View {
-    @BindView(R.id.hot_search_list) RecyclerView hotSearchRecyclerView;
-    @BindView(R.id.search_history_list) RecyclerView searchHistoryRecyclerView;
-    @BindView(R.id.search_history_layout) LinearLayout searchHistoryLayout;
+    @BindView(R.id.hot_search_list)
+    RecyclerView hotSearchRecyclerView;
+    @BindView(R.id.search_history_list)
+    RecyclerView searchHistoryRecyclerView;
+    @BindView(R.id.search_history_layout)
+    LinearLayout searchHistoryLayout;
 
     private HotKeyAdapter hotKeyAdapter;
     private SearchHistoryAdapter searchHistoryAdapter;

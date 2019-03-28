@@ -40,43 +40,46 @@ public class SignInPresenter extends BasePresenter<SignInContract.View>
         if (isUsernameEmpty) {
             return;
         }
+
         boolean isPasswordEmpty = StringUtils.isEmpty(password);
         getView().passwordEmpty(isPasswordEmpty);
         if (isPasswordEmpty) {
             return;
         }
-        Observable<BaseResponse<LoginResponse>> observable = dataManager.signin(username, password);
+
+        Observable<BaseResponse<LoginResponse>> observable = dataManager.signIn(username, password);
         observable.observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io())
                 .map(new Function<BaseResponse<LoginResponse>, LoginResponse>() {
                     @Override
-                    public LoginResponse apply(@NonNull BaseResponse<LoginResponse> response)
-                            throws Exception {
+                    public LoginResponse apply(@NonNull BaseResponse<LoginResponse> response) throws Exception {
                         return response.getData();
                     }
-                }).subscribeWith(new Observer<LoginResponse>() {
-            @Override
-            public void onSubscribe(@NonNull Disposable d) {
-                disposable = d;
-            }
+                })
+                .subscribe(new Observer<LoginResponse>() {
+                    @Override
+                    public void onSubscribe(@NonNull Disposable d) {
+                        disposable = d;
+                    }
 
-            @Override
-            public void onNext(@NonNull LoginResponse loginResponse) {
-                dataManager.saveLoggedInUser(
-                        loginResponse.getUsername(), loginResponse.getPassword(), true
-                );
-                getView().loginSuccessful(loginResponse.getUsername());
-            }
+                    @Override
+                    public void onNext(@NonNull LoginResponse loginResponse) {
+                        dataManager.saveLoggedInUser(
+                                loginResponse.getUsername(), loginResponse.getPassword(), true
+                        );
 
-            @Override
-            public void onError(@NonNull Throwable e) {
-                getView().showError(e.getMessage());
-            }
+                        getView().loginSuccessful(loginResponse.getUsername());
+                    }
 
-            @Override
-            public void onComplete() {
+                    @Override
+                    public void onError(@NonNull Throwable e) {
+                        getView().showError(e.getMessage());
+                    }
 
-            }
-        });
+                    @Override
+                    public void onComplete() {
+
+                    }
+                });
     }
 }

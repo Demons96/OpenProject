@@ -16,9 +16,10 @@ import io.github.zeleven.playa.Playa;
 import io.github.zeleven.playa.di.component.DaggerFragmentComponent;
 import io.github.zeleven.playa.di.component.FragmentComponent;
 
-public abstract class BaseFragment<P extends BaseContract.Presenter> extends Fragment
-        implements BaseContract.View {
-    @Inject protected P presenter;
+public abstract class BaseFragment<P extends BaseContract.Presenter>
+        extends Fragment implements BaseContract.View {
+    @Inject
+    protected P presenter;
 
     protected Context context;
     protected FragmentComponent fragmentComponent;
@@ -45,7 +46,8 @@ public abstract class BaseFragment<P extends BaseContract.Presenter> extends Fra
 
     public abstract int getLayout();
 
-    public void onFragmentViewCreated() {}
+    public void onFragmentViewCreated() {
+    }
 
     @Override
     public void onDestroyView() {

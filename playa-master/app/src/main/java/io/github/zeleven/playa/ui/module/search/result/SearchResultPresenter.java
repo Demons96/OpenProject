@@ -52,26 +52,27 @@ public class SearchResultPresenter extends BasePresenter<SearchResultContract.Vi
                             throws Exception {
                         return response.getData().getDatas();
                     }
-                }).subscribeWith(new Observer<List<Article>>() {
-            @Override
-            public void onSubscribe(@NonNull Disposable d) {
-                disposable = d;
-            }
+                })
+                .subscribe(new Observer<List<Article>>() {
+                    @Override
+                    public void onSubscribe(@NonNull Disposable d) {
+                        disposable = d;
+                    }
 
-            @Override
-            public void onNext(@NonNull List<Article> articles) {
-                getView().showSearchResult(page, articles);
-            }
+                    @Override
+                    public void onNext(@NonNull List<Article> articles) {
+                        getView().showSearchResult(page, articles);
+                    }
 
-            @Override
-            public void onError(@NonNull Throwable e) {
+                    @Override
+                    public void onError(@NonNull Throwable e) {
 
-            }
+                    }
 
-            @Override
-            public void onComplete() {
+                    @Override
+                    public void onComplete() {
 
-            }
-        });
+                    }
+                });
     }
 }

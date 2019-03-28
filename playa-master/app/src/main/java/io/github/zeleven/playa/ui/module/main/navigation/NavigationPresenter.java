@@ -45,26 +45,27 @@ public class NavigationPresenter extends BasePresenter<NavigationContract.View>
                             throws Exception {
                         return response.getData();
                     }
-                }).subscribeWith(new Observer<List<NavCategory>>() {
-            @Override
-            public void onSubscribe(@NonNull Disposable d) {
-                disposable = d;
-            }
+                })
+                .subscribe(new Observer<List<NavCategory>>() {
+                    @Override
+                    public void onSubscribe(@NonNull Disposable d) {
+                        disposable = d;
+                    }
 
-            @Override
-            public void onNext(@NonNull List<NavCategory> categories) {
-                getView().showNavCategories(categories);
-            }
+                    @Override
+                    public void onNext(@NonNull List<NavCategory> categories) {
+                        getView().showNavCategories(categories);
+                    }
 
-            @Override
-            public void onError(@NonNull Throwable e) {
+                    @Override
+                    public void onError(@NonNull Throwable e) {
 
-            }
+                    }
 
-            @Override
-            public void onComplete() {
+                    @Override
+                    public void onComplete() {
 
-            }
-        });
+                    }
+                });
     }
 }
