@@ -17,7 +17,6 @@
 package com.example.android.architecture.blueprints.todoapp.tasks;
 
 import android.app.Activity;
-import androidx.annotation.NonNull;
 
 import com.example.android.architecture.blueprints.todoapp.addedittask.AddEditTaskActivity;
 import com.example.android.architecture.blueprints.todoapp.data.Task;
@@ -28,6 +27,8 @@ import com.example.android.architecture.blueprints.todoapp.util.EspressoIdlingRe
 import java.util.ArrayList;
 import java.util.List;
 
+import androidx.annotation.NonNull;
+
 import static com.google.common.base.Preconditions.checkNotNull;
 
 /**
@@ -36,18 +37,31 @@ import static com.google.common.base.Preconditions.checkNotNull;
  */
 public class TasksPresenter implements TasksContract.Presenter {
 
+    /**
+     * 这里是前面定义的 Model 具体实现
+     */
     private final TasksRepository mTasksRepository;
 
+    /**
+     * 这里是前面定义的 View 接口
+     */
     private final TasksContract.View mTasksView;
 
     private TasksFilterType mCurrentFiltering = TasksFilterType.ALL_TASKS;
 
     private boolean mFirstLoad = true;
 
+    /**
+     * 这里通过构造方法将 Model 和 View 注入到 Presenter 中
+     *
+     * @param tasksRepository
+     * @param tasksView
+     */
     public TasksPresenter(@NonNull TasksRepository tasksRepository, @NonNull TasksContract.View tasksView) {
         mTasksRepository = checkNotNull(tasksRepository, "tasksRepository cannot be null");
         mTasksView = checkNotNull(tasksView, "tasksView cannot be null!");
 
+        // 这里通过接口注入的方式将 Presenter 注入到 View 中，这里的 setPresenter 是 BaseView 接口中的方法
         mTasksView.setPresenter(this);
     }
 

@@ -35,6 +35,13 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.test.espresso.IdlingResource;
 
+import static com.google.common.base.Preconditions.checkNotNull;
+
+/**
+ * 任务主页
+ * Activity 中是不做 UI 操作的，都放到 Fragment 中去实现
+ * Activity 在项目中是一个全局的控制者，负责创建 view 以及 presenter 实例，并将二者联系起来
+ */
 public class TasksActivity extends AppCompatActivity {
 
     private static final String CURRENT_FILTERING_KEY = "CURRENT_FILTERING_KEY";
@@ -52,6 +59,7 @@ public class TasksActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         ActionBar ab = getSupportActionBar();
+        checkNotNull(ab);
         ab.setHomeAsUpIndicator(R.drawable.ic_menu);
         ab.setDisplayHomeAsUpEnabled(true);
 
@@ -63,6 +71,7 @@ public class TasksActivity extends AppCompatActivity {
             setupDrawerContent(navigationView);
         }
 
+        // 创建并设置主任务 Fragment
         TasksFragment tasksFragment =
                 (TasksFragment) getSupportFragmentManager().findFragmentById(R.id.contentFrame);
         if (tasksFragment == null) {

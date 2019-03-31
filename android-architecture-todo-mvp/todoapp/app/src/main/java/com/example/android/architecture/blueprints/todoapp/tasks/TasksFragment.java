@@ -50,6 +50,7 @@ import java.util.List;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 /**
+ * 将 Fragment 作为 view 层的实现类
  * Display a grid of {@link Task}s. User can choose to view all, active or completed tasks.
  */
 public class TasksFragment extends Fragment implements TasksContract.View {
@@ -87,9 +88,14 @@ public class TasksFragment extends Fragment implements TasksContract.View {
     @Override
     public void onResume() {
         super.onResume();
+        // 获取数据并操作 view 界面的显示。
         mPresenter.start();
     }
 
+    /**
+     * 通过该方法，view 获得了 presenter 得实例，从而可以调用 presenter 代码来处理业务逻辑
+     * @param presenter
+     */
     @Override
     public void setPresenter(@NonNull TasksContract.Presenter presenter) {
         mPresenter = checkNotNull(presenter);
@@ -347,6 +353,11 @@ public class TasksFragment extends Fragment implements TasksContract.View {
         Snackbar.make(getView(), message, Snackbar.LENGTH_LONG).show();
     }
 
+    /**
+     * 判断对应 Activity 是否销毁。在 Fragment 在执行异步耗时操作后，
+     * 如果调用 Activity 实例，应当先使用 isActive() 方法加以判断。
+     * @return
+     */
     @Override
     public boolean isActive() {
         return isAdded();
