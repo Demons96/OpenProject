@@ -18,5 +18,6 @@
 - [greenDAO-master](https://github.com/greenrobot/greenDAO)
 
 ## 讲解设计框架的 demo
+- [android-architecture-todo-mvp](https://github.com/googlesamples/android-architecture/tree/todo-mvp/)
 - [Android-CleanArchitecture-Kotlin-master](https://github.com/android10/Android-CleanArchitecture-Kotlin)
 - [Android-CleanArchitecture](https://github.com/android10/Android-CleanArchitecture)
