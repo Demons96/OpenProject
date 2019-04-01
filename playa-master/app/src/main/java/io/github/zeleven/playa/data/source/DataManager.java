@@ -42,6 +42,12 @@ public class DataManager {
         return wanAndroidService.getBannerData();
     }
 
+    /**
+     * 首页文章数据
+     *
+     * @param page
+     * @return
+     */
     public Observable<BaseResponse<ArticleListResponse>> getArticles(int page) {
         return wanAndroidService.getArticles(page);
     }

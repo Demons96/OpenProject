@@ -38,7 +38,7 @@ public class NetConfig {
 
         //服务器地址
         interface BaseUrl {
-            String SERVER_DEVELOP = "http://www.wanandroid.com";
+            String SERVER_DEVELOP = "https://www.wanandroid.com";
             String SERVER_TEST = "";
             String SERVER_PRODUCTION = "";
         }

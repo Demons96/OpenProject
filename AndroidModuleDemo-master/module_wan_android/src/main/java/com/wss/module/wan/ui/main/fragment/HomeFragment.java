@@ -93,7 +93,6 @@ public class HomeFragment extends BaseMvpFragment<HomePresenter> implements Home
         scrollView.setOnScrollChangeListener(new NestedScrollView.OnScrollChangeListener() {
             @Override
             public void onScrollChange(NestedScrollView nestedScrollView, int scrollX, int scrollY, int oldScrollX, int oldScrollY) {
-
                 if (scrollY >= PxUtils.getScreenHeight(mContext) / 5) {
                     goTop.setVisibility(View.VISIBLE);
                 } else if (scrollY < PxUtils.getScreenHeight(mContext) / 5) {

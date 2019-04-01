@@ -11,6 +11,7 @@ import com.wss.module.wan.ui.main.mvp.contract.HomeContract;
  */
 
 public class HomeModel implements HomeContract.Model {
+
     @Override
     public void getBanner(OnResultCallBack callback) {
         HttpUtils.getInstance().getRequest(Api.GET_BANNER_LIST, callback);

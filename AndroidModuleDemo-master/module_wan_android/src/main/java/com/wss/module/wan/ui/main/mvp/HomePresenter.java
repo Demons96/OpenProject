@@ -26,7 +26,6 @@ import java.util.List;
 public class HomePresenter extends BasePresenter<HomeContract.Model, HomeContract.View> implements
         HomeContract.Presenter {
 
-
     @Override
     public void getBanner() {
         if (isViewAttached()) {
