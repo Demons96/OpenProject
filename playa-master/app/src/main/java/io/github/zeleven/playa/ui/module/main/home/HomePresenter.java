@@ -58,7 +58,7 @@ public class HomePresenter extends BasePresenter<HomeContract.View>
                         return response.getData().getDatas();
                     }
                 })
-                .subscribeWith(new Observer<List<Article>>() {
+                .subscribe(new Observer<List<Article>>() {
                     @Override
                     public void onSubscribe(@NonNull Disposable d) {
                         disposable.add(d);
