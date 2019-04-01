@@ -72,6 +72,10 @@ public abstract class BaseActivity<P extends BaseContract.Presenter>
         Log.e(getClass().getName(), message);
     }
 
+    /**
+     * 启动 appBar 标高
+     * @param enable
+     */
     public void enableAppBarElevation(boolean enable) {
         if (appbarLayout != null) {
             // 5.0 以下的系统没有 setElevation 方法

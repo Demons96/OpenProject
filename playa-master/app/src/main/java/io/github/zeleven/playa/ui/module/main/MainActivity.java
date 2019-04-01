@@ -150,6 +150,12 @@ public class MainActivity extends BaseActivity<MainPresenter> implements MainCon
         fragmentTransaction.commit();
     }
 
+    /**
+     * 创建右上角的搜索按钮
+     *
+     * @param menu
+     * @return
+     */
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.main, menu);
