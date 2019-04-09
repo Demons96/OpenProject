@@ -6,6 +6,7 @@
 - [AndroidModuleDemo-master](https://github.com/wutq/AndroidModuleDemo)
 
 ## 视频应用
+- [dkplayer-master](https://github.com/dueeeke/dkplayer)
 - [bilibili-android-client-master](https://github.com/HotBitmapGG/bilibili-android-client)
 
 ## 视频拍摄以及解压
