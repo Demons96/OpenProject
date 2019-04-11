@@ -4,6 +4,7 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
+import android.support.annotation.NonNull;
 import android.text.style.ImageSpan;
 
 /**
@@ -16,7 +17,7 @@ public class CenteredImageSpan extends ImageSpan {
     }
 
     @Override
-    public int getSize(Paint paint, CharSequence text, int start, int end,
+    public int getSize(@NonNull Paint paint, CharSequence text, int start, int end,
                        Paint.FontMetricsInt fm) {
         Drawable d = getDrawable();
         Rect rect = d.getBounds();
