@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.mcxtzhang.swipemenulib.SwipeMenuLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<com.mcxtzhang.swipemenulib.SwipeMenuLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:paddingLeft="15dp"
-    app:ios="false"
-    >
+    app:ios="false">
 
     <LinearLayout
         android:id="@+id/content"
@@ -20,7 +18,7 @@
             android:id="@+id/ivAvatar"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            tools:src="@drawable/friend"/>
+            tools:src="@drawable/friend" />
 
         <TextView
             android:id="@+id/tvCity"
@@ -28,7 +26,7 @@
             android:layout_height="match_parent"
             android:gravity="center_vertical"
             android:paddingLeft="15dp"
-            tools:text="安徽"/>
+            tools:text="安徽" />
     </LinearLayout>
 
     <Button
@@ -38,5 +36,5 @@
         android:background="#ecd50a"
         android:clickable="true"
         android:text="删除"
-        android:textColor="@android:color/white"/>
+        android:textColor="@android:color/white" />
 </com.mcxtzhang.swipemenulib.SwipeMenuLayout>

@@ -59,14 +59,12 @@ public class SwipeDelMenuActivity extends AppCompatActivity {
         mRv = (RecyclerView) findViewById(R.id.rv);
         mRv.setLayoutManager(mManager = new LinearLayoutManager(this));
 
-
         mAdapter = new SwipeDelMenuAdapter(this, mDatas);
         mRv.setAdapter(mAdapter);
         mRv.addItemDecoration(mDecoration = new SuspensionDecoration(this, mDatas));
         //如果add两个，那么按照先后顺序，依次渲染。
         //mRv.addItemDecoration(new TitleItemDecoration2(this,mDatas));
         mRv.addItemDecoration(new DividerItemDecoration(SwipeDelMenuActivity.this, DividerItemDecoration.VERTICAL_LIST));
-
 
         //使用indexBar
         mTvSideBarHint = (TextView) findViewById(R.id.tvSideBarHint);//HintTextView
@@ -125,16 +123,13 @@ public class SwipeDelMenuActivity extends AppCompatActivity {
         mIndexBar.setmSourceDatas(mDatas)
                 .invalidate();
         mAdapter.notifyDataSetChanged();
-
     }
-
 
     /**
      * 和CityAdapter 一模一样，只是修改了 Item的布局
      * Created by zhangxutong .
      * Date: 16/08/28
      */
-
     private class SwipeDelMenuAdapter extends CityAdapter {
 
         public SwipeDelMenuAdapter(Context mContext, List<CityBean> mDatas) {

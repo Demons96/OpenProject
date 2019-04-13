@@ -11,8 +11,8 @@ import android.widget.Toast;
 
 import java.util.List;
 
-import mcxtzhang.itemdecorationdemo.model.CityBean;
 import mcxtzhang.itemdecorationdemo.R;
+import mcxtzhang.itemdecorationdemo.model.CityBean;
 
 /**
  * Created by zhangxutong .

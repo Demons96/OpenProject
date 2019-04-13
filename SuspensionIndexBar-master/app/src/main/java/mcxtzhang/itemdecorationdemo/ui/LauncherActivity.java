@@ -7,6 +7,9 @@ import android.view.View;
 
 import mcxtzhang.itemdecorationdemo.R;
 
+/**
+ * 功能索引页
+ */
 public class LauncherActivity extends AppCompatActivity {
 
     @Override

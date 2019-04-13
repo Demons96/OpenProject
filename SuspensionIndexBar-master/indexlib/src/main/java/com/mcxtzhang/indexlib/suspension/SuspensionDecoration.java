@@ -49,12 +49,10 @@ public class SuspensionDecoration extends RecyclerView.ItemDecoration {
         mInflater = LayoutInflater.from(context);
     }
 
-
     public SuspensionDecoration setmTitleHeight(int mTitleHeight) {
         this.mTitleHeight = mTitleHeight;
         return this;
     }
-
 
     public SuspensionDecoration setColorTitleBg(int colorTitleBg) {
         COLOR_TITLE_BG = colorTitleBg;

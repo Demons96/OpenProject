@@ -35,6 +35,9 @@ public class WeChatActivity extends AppCompatActivity {
     private LinearLayoutManager mManager;
     private List<CityBean> mDatas = new ArrayList<>();
 
+    /**
+     * 分割线
+     */
     private SuspensionDecoration mDecoration;
 
     /**
@@ -53,19 +56,19 @@ public class WeChatActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         // 使用indexBar
-        mTvSideBarHint = (TextView) findViewById(R.id.tvSideBarHint);//HintTextView
-        mIndexBar = (IndexBar) findViewById(R.id.indexBar);//IndexBar
+        mTvSideBarHint = (TextView) findViewById(R.id.tvSideBarHint);  // HintTextView
+        mIndexBar = (IndexBar) findViewById(R.id.indexBar);            // IndexBar
         mRv = (RecyclerView) findViewById(R.id.rv);
 
         mRv.setLayoutManager(mManager = new LinearLayoutManager(this));
         mRv.setAdapter(mAdapter = new CityAdapter(this, mDatas));
         mRv.addItemDecoration(mDecoration = new SuspensionDecoration(this, mDatas));
-        // 如果add两个，那么按照先后顺序，依次渲染。
+        // 如果add两个，那么按照先后顺序，依次渲染。这个是普通的 item 项的分割线
         mRv.addItemDecoration(new DividerItemDecoration(WeChatActivity.this, DividerItemDecoration.VERTICAL_LIST));
 
-        //indexbar初始化
+        // indexbar初始化
         mIndexBar.setmPressedShowTextView(mTvSideBarHint)//设置HintTextView
-                .setNeedRealIndex(true)//设置需要真实的索引
+                .setNeedRealIndex(false)//设置需要真实的索引
                 .setmLayoutManager(mManager);//设置RecyclerView的LayoutManager
 
         // 模拟线上加载数据
@@ -84,25 +87,25 @@ public class WeChatActivity extends AppCompatActivity {
             @Override
             public void run() {
                 mDatas = new ArrayList<>();
-                //微信的头部 也是可以右侧IndexBar导航索引的，
+                // 微信的头部 也是可以右侧IndexBar导航索引的，
                 // 但是它不需要被ItemDecoration设一个标题titile
                 mDatas.add((CityBean) new CityBean("新的朋友").setTop(true).setBaseIndexTag(INDEX_STRING_TOP));
                 mDatas.add((CityBean) new CityBean("群聊").setTop(true).setBaseIndexTag(INDEX_STRING_TOP));
                 mDatas.add((CityBean) new CityBean("标签").setTop(true).setBaseIndexTag(INDEX_STRING_TOP));
                 mDatas.add((CityBean) new CityBean("公众号").setTop(true).setBaseIndexTag(INDEX_STRING_TOP));
                 for (String aData : data) {
-                    CityBean cityBean = new CityBean();
-                    cityBean.setCity(aData);//设置城市名称
-                    mDatas.add(cityBean);
+                    mDatas.add(new CityBean(aData));
                 }
                 mAdapter.setDatas(mDatas);
                 mAdapter.notifyDataSetChanged();
 
                 mIndexBar.setmSourceDatas(mDatas)//设置数据
                         .invalidate();
+                // 设置不同分类之间的分割线
                 mDecoration.setmDatas(mDatas);
             }
         }, 500);
+
     }
 
     /**
