@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <import type="leavesc.hello.databindingsamples.model.ObservableGoods" />
+
+        <import type="leavesc.hello.databindingsamples.Main4Activity.ObservableGoodsHandler" />
+
+        <variable
+            name="observableGoods"
+            type="ObservableGoods" />
+
+        <variable
+            name="observableGoodsHandler"
+            type="ObservableGoodsHandler" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{observableGoods.name}" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{String.valueOf(observableGoods.price)}" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{observableGoods.details}" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="@{()->observableGoodsHandler.changeGoodsName()}"
+            android:text="改变属性 name 和 price"
+            android:textAllCaps="false" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="@{()->observableGoodsHandler.changeGoodsDetails()}"
+            android:text="改变属性 details 和 price"
+            android:textAllCaps="false" />
+
+    </LinearLayout>
+</layout>

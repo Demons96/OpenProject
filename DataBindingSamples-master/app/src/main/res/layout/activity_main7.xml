@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bind="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="leavesc.hello.databindingsamples.Main7Activity.Handler" />
+
+        <import type="leavesc.hello.databindingsamples.model.User" />
+
+        <variable
+            name="handler"
+            type="Handler" />
+
+        <variable
+            name="userInfo"
+            type="User" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btn_show"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="@{handler::onClick}"
+            android:text="显示" />
+
+        <include
+            layout="@layout/view_include"
+            bind:userInfo="@{userInfo}" />
+
+        <ViewStub
+            android:id="@+id/view_stub"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout="@layout/view_stub"
+            bind:userInfo="@{userInfo}" />
+
+    </LinearLayout>
+</layout>
