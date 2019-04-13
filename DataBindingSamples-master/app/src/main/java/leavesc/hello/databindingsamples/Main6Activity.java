@@ -26,6 +26,7 @@ public class Main6Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main6);
+
         user = new User("leavesC", "12345");
         binding.setUserInfo(user);
         binding.setUserPresenter(new UserPresenter());

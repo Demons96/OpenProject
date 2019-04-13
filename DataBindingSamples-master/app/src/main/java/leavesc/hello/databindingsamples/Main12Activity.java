@@ -21,18 +21,21 @@ import leavesc.hello.databindingsamples.model.User;
  * Blog：https://www.jianshu.com/u/9df45b87cfdf
  */
 public class Main12Activity extends AppCompatActivity {
+    private List<User> userList = new ArrayList<>();
+    {
+        for (int i = 0; i < 20; i++) {
+            userList.add(new User("user_" + i, String.valueOf(new Random().nextInt() * 4)));
+        }
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main12);
+
         RecyclerView rvList = findViewById(R.id.rvList);
         rvList.setLayoutManager(new LinearLayoutManager(this));
-        List<User> userList = new ArrayList<>();
-        for (int i = 0; i < 20; i++) {
-            User user = new User("user_" + i, String.valueOf(new Random().nextInt() * 4));
-            userList.add(user);
-        }
+
         UserAdapter userAdapter = new UserAdapter(userList);
         rvList.setAdapter(userAdapter);
     }

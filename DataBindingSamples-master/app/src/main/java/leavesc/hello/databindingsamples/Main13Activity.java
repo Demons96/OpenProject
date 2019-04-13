@@ -23,34 +23,32 @@ import leavesc.hello.databindingsamples.observable.DynamicChangeCallback;
  * Blog：https://www.jianshu.com/u/9df45b87cfdf
  */
 public class Main13Activity extends AppCompatActivity {
-
-    private ObservableArrayList<User> userObservableArrayList;
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main13);
-        RecyclerView rvList = findViewById(R.id.rvList);
-        rvList.setLayoutManager(new LinearLayoutManager(this));
-        initData();
-        UserAdapter userAdapter = new UserAdapter(userObservableArrayList);
-        userAdapter.notifyDataSetChanged();
-        userObservableArrayList.addOnListChangedCallback(new DynamicChangeCallback(userAdapter));
-        rvList.setAdapter(userAdapter);
-    }
-
-    private void initData() {
-        userObservableArrayList = new ObservableArrayList<>();
+    private ObservableArrayList<User> userObservableArrayList = new ObservableArrayList<>();
+    {
         for (int i = 0; i < 20; i++) {
             User user = new User("user_" + i, String.valueOf(new Random().nextInt() * 4));
             userObservableArrayList.add(user);
         }
     }
 
+    RecyclerView rvList = findViewById(R.id.rvList);
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main13);
+        rvList.setLayoutManager(new LinearLayoutManager(this));
+
+        UserAdapter userAdapter = new UserAdapter(userObservableArrayList);
+        userAdapter.notifyDataSetChanged();
+        userObservableArrayList.addOnListChangedCallback(new DynamicChangeCallback(userAdapter));
+        rvList.setAdapter(userAdapter);
+    }
+
     public void addItem(View view) {
         if (userObservableArrayList.size() >= 3) {
             User user = new User("user_" + 100, String.valueOf(new Random().nextInt() * 4));
-            userObservableArrayList.add(1, user);
+            userObservableArrayList.add(0, user);
         }
     }
 
@@ -61,7 +59,7 @@ public class Main13Activity extends AppCompatActivity {
                 User user = new User("user_" + 100, String.valueOf(new Random().nextInt() * 4));
                 userList.add(user);
             }
-            userObservableArrayList.addAll(1, userList);
+            userObservableArrayList.addAll(0, userList);
         }
     }
 

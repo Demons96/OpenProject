@@ -28,9 +28,11 @@ public class Main3Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         ActivityMain3Binding binding = DataBindingUtil.setContentView(this, R.layout.activity_main3);
+        binding.setGoodsHandler(new GoodsHandler());
+
         goods = new Goods("code", "hi", 24);
         binding.setGoods(goods);
-        binding.setGoodsHandler(new GoodsHandler());
+
         goods.addOnPropertyChangedCallback(new Observable.OnPropertyChangedCallback() {
             @Override
             public void onPropertyChanged(Observable sender, int propertyId) {

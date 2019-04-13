@@ -84,4 +84,9 @@ public class StartActivity extends AppCompatActivity {
         startActivity(Main13Activity.class);
     }
 
+    // DataBinding And RecyclerView
+    public void startActivity14(View view) {
+        startActivity(Main14Activity.class);
+    }
+
 }

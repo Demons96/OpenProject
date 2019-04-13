@@ -25,6 +25,7 @@ public class Main8Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         ActivityMain8Binding binding = DataBindingUtil.setContentView(this, R.layout.activity_main8);
         binding.setList(new ArrayList<String>());
+
         Map<String, String> map = new HashMap<>();
         map.put("leavesC", "Hi");
         binding.setMap(map);

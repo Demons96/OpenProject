@@ -30,6 +30,7 @@
         <activity android:name=".Main11Activity" />
         <activity android:name=".Main12Activity" />
         <activity android:name=".Main13Activity" />
+        <activity android:name=".Main14Activity"></activity>
     </application>
 
 </manifest>
