@@ -26,3 +26,6 @@
 
 ## 控件类
 - [SuspensionIndexBar-master](https://github.com/mcxtzhang/SuspensionIndexBar)
+
+## 微信朋友圈
+- [HighPerformanceFriendsCircle-master](https://github.com/KCrason/HighPerformanceFriendsCircle)
