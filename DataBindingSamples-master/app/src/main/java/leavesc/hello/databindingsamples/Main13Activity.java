@@ -31,12 +31,12 @@ public class Main13Activity extends AppCompatActivity {
         }
     }
 
-    RecyclerView rvList = findViewById(R.id.rvList);
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main13);
+
+        RecyclerView rvList = findViewById(R.id.rvList);
         rvList.setLayoutManager(new LinearLayoutManager(this));
 
         UserAdapter userAdapter = new UserAdapter(userObservableArrayList);
@@ -48,7 +48,7 @@ public class Main13Activity extends AppCompatActivity {
     public void addItem(View view) {
         if (userObservableArrayList.size() >= 3) {
             User user = new User("user_" + 100, String.valueOf(new Random().nextInt() * 4));
-            userObservableArrayList.add(0, user);
+            userObservableArrayList.add(1, user);
         }
     }
 
@@ -59,7 +59,7 @@ public class Main13Activity extends AppCompatActivity {
                 User user = new User("user_" + 100, String.valueOf(new Random().nextInt() * 4));
                 userList.add(user);
             }
-            userObservableArrayList.addAll(0, userList);
+            userObservableArrayList.addAll(1, userList);
         }
     }
 
