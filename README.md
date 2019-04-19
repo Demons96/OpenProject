@@ -29,3 +29,6 @@
 
 ## 微信朋友圈
 - [HighPerformanceFriendsCircle-master](https://github.com/KCrason/HighPerformanceFriendsCircle)
+
+## 文件管理
+- [AndroidFileManage-master](https://github.com/cwjfeifei/AndroidFileManage)
