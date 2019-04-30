@@ -33,3 +33,6 @@
 
 ## 文件管理
 - [AndroidFileManage-master](https://github.com/cwjfeifei/AndroidFileManage)
+
+## 性能检测类
+- [DoraemonKit-master](https://github.com/didi/DoraemonKit)
